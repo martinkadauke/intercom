@@ -199,7 +199,7 @@
       "zone": "wall",
       "status": "to_buy",
       "name": "Split cable gland",
-      "hint": "Conta-Clip KDS-KV M25 split gland with a split sealing insert, in one 25.5 mm hole in the box's back wall. The moulded RJ45 plug passes through the opened gland, then the slit insert closes watertight around the cable. IP66."
+      "hint": "Conta-Clip KDS-KV M25 split gland (lock nut included) with a split sealing insert KDS-DE 6-7 for the 6.0-6.6 mm cable, in one hole in the box's back wall (Conta-Clip specifies 25.2 mm). The moulded RJ45 plug passes through the opened gland, then the slit insert closes watertight around the cable. IP66."
     },
     {
       "id": "splitter",
@@ -381,7 +381,7 @@
       "zone": "front",
       "status": "to_buy",
       "name": "Gasket",
-      "hint": "Gasket cord (2.0 mm) in a groove of the box rim, pressed by the brass front: seals the box against rain. Plus an O-ring 42 x 2 for the button."
+      "hint": "Gasket cord (2.0 mm) in a groove of the box rim, pressed by the brass front: seals the box against rain. Plus an O-ring 26 x 2 for the button (size from the CAD, kasten_v3_params)."
     },
     {
       "id": "brass",

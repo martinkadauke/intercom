@@ -196,14 +196,14 @@
    "en": {
     "label": "Split cable gland",
     "what": "The single sealed cable entry in the box's back wall. It opens so the moulded RJ45 plug (the network plug) passes through; then the slit insert closes watertight around the cable.",
-    "specs": "Conta-Clip KDS-KV M25 with split sealing insert, one 25.5 mm hole in the back wall. IP66 (dust-tight, resists strong water jets).",
+    "specs": "Conta-Clip KDS-KV M25 (lock nut included) with the split insert KDS-DE 6-7 for the 6.0-6.6 mm cable. One hole in the back wall; Conta-Clip specifies 25.2 mm. IP66 (dust-tight, resists strong water jets).",
     "why": "Lets the ready-made cable in without cutting off its plug. Measure the cable's outer diameter first; it is not published.",
     "solder": ""
    },
    "de": {
     "label": "Kabelverschraubung",
     "what": "Die einzige abgedichtete Kabeleinführung in der Kastenrückwand. Sie lässt sich öffnen, damit der angespritzte RJ45-Stecker (Netzwerkstecker) durchpasst; danach schließt der geschlitzte Einsatz wasserdicht ums Kabel.",
-    "specs": "Conta-Clip KDS-KV M25 mit geteiltem Dichteinsatz, ein Loch Ø 25,5 mm in der Rückwand. IP66 (staubdicht, strahlwassergeschützt).",
+    "specs": "Conta-Clip KDS-KV M25 (Gegenmutter dabei) mit geteiltem Dichteinsatz KDS-DE 6-7 für das 6,0–6,6-mm-Kabel. Ein Loch in der Rückwand, laut Conta-Clip Ø 25,2 mm. IP66 (staubdicht, strahlwassergeschützt).",
     "why": "Das fertige Kabel kommt hinein, ohne dass man den Stecker abschneidet. Vorher den Außendurchmesser des Kabels messen; er ist nicht veröffentlicht.",
     "solder": ""
    }
@@ -596,14 +596,14 @@
    "en": {
     "label": "Gasket",
     "what": "A round sealing cord in a groove along the box rim. The screwed-on brass front presses on it, so water behind the brass stays out of the box. A separate O-ring (rubber ring) seals behind the button.",
-    "specs": "Cord 2.0 mm in a 2.4 × 1.5 mm groove. Button O-ring listed as 42 × 2; the current CAD groove suggests 26 × 2, so check before buying.",
+    "specs": "Cord 2.0 mm (solid EPDM, not foam) in a 2.4 × 1.5 mm groove. Button O-ring 26 × 2 mm.",
     "why": "Rain can get behind the brass, and the cord keeps it out of the box. Along the top edge the LED openings break the groove; there the diffuser's silicone seals.",
     "solder": ""
    },
    "de": {
     "label": "Dichtung",
     "what": "Eine runde Dichtschnur in einer Nut im Kastenrand. Die verschraubte Messingfront presst sie an, so bleibt Wasser hinter dem Messing aus dem Kasten. Ein eigener O-Ring (Gummiring) dichtet hinter dem Taster.",
-    "specs": "Schnur Ø 2,0 mm in Nut 2,4 × 1,5 mm. O-Ring am Taster laut Liste 42 × 2, die aktuelle CAD-Nut passt zu 26 × 2: vor dem Kauf prüfen.",
+    "specs": "Schnur Ø 2,0 mm (Vollgummi EPDM, kein Moosgummi) in Nut 2,4 × 1,5 mm. O-Ring am Taster 26 × 2 mm.",
     "why": "Regen kann hinter das Messing gelangen, die Schnur hält ihn vom Kasten fern. Oben unterbrechen die LED-Öffnungen die Nut, dort dichtet das Diffusor-Silikon.",
     "solder": ""
    }
@@ -1145,11 +1145,11 @@
   "e_button_brass": {
    "en": {
     "label": "Button in the front",
-    "carries": "The button's 48.5 mm ring sits recessed in the brass front, with an O-ring (a rubber sealing ring) behind it that seals it. Size 42 × 2 or 26 × 2: check the CAD groove before buying."
+    "carries": "The button's 48.5 mm ring sits recessed in the brass front, with an O-ring (a rubber sealing ring) behind it that seals it. Size 26 × 2 mm."
    },
    "de": {
     "label": "Taster in der Front",
-    "carries": "Der Ring des Tasters (48,5 mm) sitzt vertieft in der Messingfront, dahinter dichtet ein O-Ring (Gummidichtring) ab. Größe 42 × 2 oder 26 × 2: vor dem Kauf an der CAD-Nut prüfen."
+    "carries": "Der Ring des Tasters (48,5 mm) sitzt vertieft in der Messingfront, dahinter dichtet ein O-Ring (Gummidichtring) ab. Größe 26 × 2 mm."
    }
   },
   "e_splitter_wt32": {

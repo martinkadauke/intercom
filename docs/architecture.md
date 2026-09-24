@@ -104,11 +104,12 @@ a phone as audio plus a local Whisper transcript.
   grille (3 rows of slanted slots), 2 × Ø1.2 mm mic holes and the button hole (Ø49.5 mm for a
   Ø48.5 mm ring). The LED band sits in the bend: 2 windows for the strip and 2 slits for the
   diffuser's tabs.
-- **Box:** 3D-printed ASA, set flush into 14 cm of facade insulation and fixed into the masonry
-  behind it. Gasket cord in a rim groove, pressed by the front. A pressure vent lets it breathe
+- **Box:** 3D-printed (ASA; PETG on open-frame printers, which warp large ASA parts), set flush
+  into 14 cm of facade insulation and fixed into the masonry behind it. Gasket cord in a rim groove, pressed by the front. A pressure vent lets it breathe
   into the grille cavity; the grille cavity counts as outside air and has to drain.
-- **Cable entry:** a split cable gland (Conta-Clip KDS-KV M25) in a Ø25.5 mm hole, so the
-  ready-made cable with its moulded plug can go through.
+- **Cable entry:** a split cable gland (Conta-Clip KDS-KV M25, 25.2 mm hole) with a split
+  sealing insert for the 6–7 mm cable, so the ready-made cable with its moulded plug can go
+  through.
 - **No camera. Ever.** This is a design rule, not an open question.
 
 ## Open points
