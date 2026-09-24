@@ -1,0 +1,55 @@
+# Build log
+
+What happened, in order, including the dead ends. Dates are 2026.
+
+## August: a doorbell that works
+
+- The old doorbell had been dead for a long time: its button's circuit board had died from rain.
+- First version: a plain brass button on an existing two-wire cable into an ESP32 indoors,
+  running ESPHome, with a push notification through Home Assistant. No chime.
+- **Lesson:** a floating input pin on a long cable acts as an antenna. At one point it
+  produced 134 phantom rings in 15 minutes. The fix became the supervised line: pull-up,
+  series resistor, filter capacitor and an end-of-line resistor at the button, so idle,
+  pressed and a cut wire give three different voltages.
+- **Lesson:** a component only does something if current can flow *through* it. A resistor
+  plugged into an empty breadboard row changed nothing, and only the multimeter showed it.
+
+## 17 September: from doorbell to intercom
+
+- New goal: a small e-paper screen at the door, later speech in both directions.
+- **Hard rule from day one: no camera at the door, ever.**
+- Front design in five rounds of dimensioned drawings (generated in Python, true scale):
+  - v2: portrait screen, one button, speaker grille;
+  - v3: flush in the wall, a separate brass roof cap, a cable pipe bending into the wall;
+  - v4: back to one folded sheet, with a brass cable pipe rising in front of the wall (rejected);
+  - v5: no pipe, 100 × 260 mm, LED band in the fold with a quarter-round diffuser.
+
+## 18 September: CAD
+
+- The front sheet, the in-wall box, a carrier plate and the diffuser modelled in FreeCAD,
+  driven by scripts. First prints of the sheet (in two parts, it is taller than the print bed)
+  and the box.
+- The speaker changed from a 3 W waterproof part to the smaller VISATON K 40 SQ: it is quieter on
+  paper (0.5 W) but louder in practice (82 dB vs 74 dB at 1 W / 1 m). Sensitivity beats wattage.
+
+## 24 September: parts, architecture, explorer
+
+- Most parts arrived and were identified (some sold under vague names: an opto-coupled MOSFET
+  module turned out to be usable because its optocoupler drives the gate from 12 V).
+- Architecture settled:
+  - **one** ready-made outdoor PoE cable instead of three cables plus a power cable;
+  - three computers: a wired doorbell computer, a talk computer on WiFi, a screen computer
+    on WiFi;
+  - two-way talk via the community VoIP Stack for ESPHome, with walkie-talkie mode as the
+    fallback.
+- The [explorer](../explorer/) was built to make the whole system understandable, including
+  every wire and every solder joint.
+
+## Next
+
+1. Phone side first: answer a test call from a notification, before any door hardware.
+2. The doorbell computer on the bench: all three line states, 20 of 20 presses under 1 second.
+3. The screen: pages that change on a ring; measure WiFi inside a mock box behind metal.
+4. Talk, one direction at a time, then full duplex.
+5. One cable, the power rail and the heater; measure the real PoE draw.
+6. Two weeks of soak testing before the box goes into the wall.

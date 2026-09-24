@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.FCBak
+hardware/cad/out/
+.venv/
+.DS_Store
+Thumbs.db
