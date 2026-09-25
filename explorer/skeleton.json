@@ -1,5 +1,5 @@
 {
-  "state": "2026-09-24",
+  "state": "2026-09-25",
   "_about": "Structure of the Klingelbox explorer, state 2026-09-24. Architecture (decided 2026-09-24): ONE PoE cable into the box, no switch in the box. Three computers: the WT32-ETH01 is the wired doorbell computer (button, light, heater, climate sensor) on the splitter's data port; the Waveshare ESP32-S3-ETH is the talk computer (microphone, amplifier) on WiFi; the LilyGO T5 4.7 S3 Touch drives the screen on WiFi. Splitter output voltage (12 V shown) is still pending. Hints carry the facts writers may use; writers add no new facts.",
   "zones": [
     {
@@ -1535,5 +1535,288 @@
     "WiFi signal for the screen and the talk computer inside the box: on-site test.",
     "LED strip type (RGBW) and the screen's touch chip: bench checks.",
     "CAD: the grille cavity floor slopes the wrong way (water would pool at the speaker)."
+  ],
+  "milestones": [
+    {
+      "id": "m_concept",
+      "track": "plan",
+      "status": "done",
+      "needs": [],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_front",
+          "status": "done",
+          "node": "brass"
+        },
+        {
+          "id": "t_arch",
+          "status": "done",
+          "node": "wt32"
+        },
+        {
+          "id": "t_parts",
+          "status": "done"
+        },
+        {
+          "id": "t_map",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "id": "m_parts",
+      "track": "hw",
+      "status": "now",
+      "needs": [
+        "m_concept"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_split",
+          "status": "decide",
+          "node": "splitter"
+        },
+        {
+          "id": "t_order",
+          "status": "open"
+        },
+        {
+          "id": "t_inhand",
+          "status": "done"
+        },
+        {
+          "id": "t_mail",
+          "status": "doing",
+          "node": "lilygo"
+        },
+        {
+          "id": "t_bench",
+          "status": "open",
+          "node": "lilygo"
+        }
+      ]
+    },
+    {
+      "id": "m_fit",
+      "track": "hw",
+      "status": "next",
+      "needs": [
+        "m_parts"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_measure",
+          "status": "open"
+        },
+        {
+          "id": "t_cables",
+          "status": "open",
+          "node": "gland"
+        },
+        {
+          "id": "t_alpha1",
+          "status": "open"
+        },
+        {
+          "id": "t_alpha2",
+          "status": "open"
+        },
+        {
+          "id": "t_size",
+          "status": "decide",
+          "node": "splitter"
+        }
+      ]
+    },
+    {
+      "id": "m_soft",
+      "track": "sw",
+      "status": "now",
+      "needs": [
+        "m_parts"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_s0",
+          "status": "open",
+          "node": "phone"
+        },
+        {
+          "id": "t_s1",
+          "status": "open",
+          "node": "wt32"
+        },
+        {
+          "id": "t_s2",
+          "status": "waiting",
+          "node": "lilygo"
+        },
+        {
+          "id": "t_s3",
+          "status": "open",
+          "node": "waveshare"
+        },
+        {
+          "id": "t_s4",
+          "status": "decide",
+          "node": "waveshare"
+        },
+        {
+          "id": "t_audio",
+          "status": "decide",
+          "node": "speakers"
+        },
+        {
+          "id": "t_s5",
+          "status": "waiting",
+          "node": "splitter"
+        },
+        {
+          "id": "t_ux",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "id": "m_water",
+      "track": "wx",
+      "status": "now",
+      "needs": [
+        "m_concept"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_mount",
+          "status": "decide"
+        },
+        {
+          "id": "t_bracket",
+          "status": "open"
+        },
+        {
+          "id": "t_testplate",
+          "status": "open",
+          "node": "brass"
+        },
+        {
+          "id": "t_seals",
+          "status": "open",
+          "node": "gasket"
+        },
+        {
+          "id": "t_material",
+          "status": "decide"
+        },
+        {
+          "id": "t_drain",
+          "status": "open",
+          "node": "grille"
+        },
+        {
+          "id": "t_test",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "id": "m_beta",
+      "track": "box",
+      "status": "later",
+      "needs": [
+        "m_fit",
+        "m_soft"
+      ],
+      "soft": [
+        "m_water"
+      ],
+      "tasks": [
+        {
+          "id": "t_bprint",
+          "status": "open"
+        },
+        {
+          "id": "t_bbracket",
+          "status": "open"
+        },
+        {
+          "id": "t_bwire",
+          "status": "open",
+          "node": "cable"
+        },
+        {
+          "id": "t_bsoak",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "id": "m_pre",
+      "track": "box",
+      "status": "later",
+      "needs": [
+        "m_beta",
+        "m_water"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_papply",
+          "status": "open"
+        },
+        {
+          "id": "t_pbrass",
+          "status": "open",
+          "node": "brass"
+        },
+        {
+          "id": "t_pprint",
+          "status": "open"
+        },
+        {
+          "id": "t_pwater",
+          "status": "open"
+        },
+        {
+          "id": "t_pcold",
+          "status": "open",
+          "node": "heater"
+        }
+      ]
+    },
+    {
+      "id": "m_door",
+      "track": "box",
+      "status": "later",
+      "needs": [
+        "m_pre"
+      ],
+      "soft": [],
+      "tasks": [
+        {
+          "id": "t_elec",
+          "status": "open",
+          "node": "earthbar"
+        },
+        {
+          "id": "t_route",
+          "status": "open",
+          "node": "cable"
+        },
+        {
+          "id": "t_fix",
+          "status": "open"
+        },
+        {
+          "id": "t_live",
+          "status": "open",
+          "node": "button"
+        }
+      ]
+    }
   ]
 }

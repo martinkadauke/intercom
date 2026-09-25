@@ -47,9 +47,6 @@ What happened, in order, including the dead ends. Dates are 2026.
 
 ## Next
 
-1. Phone side first: answer a test call from a notification, before any door hardware.
-2. The doorbell computer on the bench: all three line states, 20 of 20 presses under 1 second.
-3. The screen: pages that change on a ring; measure WiFi inside a mock box behind metal.
-4. Talk, one direction at a time, then full duplex.
-5. One cable, the power rail and the heater; measure the real PoE draw.
-6. Two weeks of soak testing before the box goes into the wall.
+The plan from here is the [roadmap](roadmap.md): all hardware on the table, measure and
+alpha-print the box, build the software on the bench, prove the box can be sealed, then a beta
+box on the desk, a pre-release box and finally the door.

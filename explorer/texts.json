@@ -1824,5 +1824,219 @@
    "en": "CAD: the floor of the cavity behind the grille slopes the wrong way, so water would pool at the speaker; the fix is pending.",
    "de": "CAD: Der Boden des Hohlraums hinter dem Gitter fällt zur falschen Seite, Wasser würde sich am Lautsprecher sammeln; die Korrektur steht noch aus."
   }
- ]
+ ],
+ "milestones": {
+  "m_concept": {
+   "en": {
+    "title": "Concept and architecture",
+    "why": "Decide what the device is before buying and printing: the front design, the parts and how they connect.",
+    "done_when": "Every part, wire and open decision is on the map.",
+    "tasks": {
+     "t_front": "Front design v5: one bent brass sheet, 100 × 260 mm, light band under the roof",
+     "t_arch": "Architecture: one PoE cable, three computers (doorbell, talk, screen)",
+     "t_parts": "Parts chosen and drawn with their dimensions",
+     "t_map": "This map and the public repository"
+    }
+   },
+   "de": {
+    "title": "Konzept und Architektur",
+    "why": "Festlegen, was das Gerät ist, bevor gekauft und gedruckt wird: Frontdesign, Teile und wie sie zusammenhängen.",
+    "done_when": "Jedes Teil, jede Leitung und jede offene Entscheidung steht auf der Karte.",
+    "tasks": {
+     "t_front": "Frontdesign v5: ein gekantetes Messingblech, 100 × 260 mm, Lichtband unter dem Dach",
+     "t_arch": "Architektur: ein PoE-Kabel, drei Rechner (Klingel, Sprechen, Bildschirm)",
+     "t_parts": "Teile ausgewählt und mit ihren Maßen gezeichnet",
+     "t_map": "Diese Karte und das öffentliche Repository"
+    }
+   }
+  },
+  "m_parts": {
+   "en": {
+    "title": "All hardware on the table",
+    "why": "Nothing can be measured, fitted or programmed for real until every part of the final build is here.",
+    "done_when": "Every part of the final build is here and identified.",
+    "tasks": {
+     "t_split": "Lock in: splitter 12 V or 5 V (it decides the heater and its switch)",
+     "t_order": "Place the order: cable, cable gland, heater, seals, small parts",
+     "t_inhand": "In hand: doorbell and talk computers, microphones, amplifier, speaker, 12→5 V converter, level shifter, climate sensor, heater switch, USB-serial adapter",
+     "t_mail": "In the mail: the screen computer and the thermal fuses",
+     "t_bench": "Bench checks on arrival: touch chip (I²C scan), LED strip really RGBW, heater switch triggers at 3.3 V"
+    }
+   },
+   "de": {
+    "title": "Alle Hardware auf dem Tisch",
+    "why": "Solange nicht jedes Teil des fertigen Geräts da ist, lässt sich nichts wirklich messen, einpassen oder programmieren.",
+    "done_when": "Jedes Teil des fertigen Geräts ist da und bestimmt.",
+    "tasks": {
+     "t_split": "Festlegen: Splitter 12 V oder 5 V (davon hängen Heizung und Schalter ab)",
+     "t_order": "Bestellen: Kabel, Kabeleinführung, Heizung, Dichtungen, Kleinteile",
+     "t_inhand": "Da: Klingel- und Sprechrechner, Mikrofone, Verstärker, Lautsprecher, 12→5-V-Wandler, Pegelwandler, Klimasensor, Heizungsschalter, USB-Seriell-Adapter",
+     "t_mail": "Unterwegs: Bildschirmrechner und Thermosicherungen",
+     "t_bench": "Prüfen beim Auspacken: Touch-Chip (I²C-Scan), LED-Streifen wirklich RGBW, Heizungsschalter schaltet mit 3,3 V"
+    }
+   }
+  },
+  "m_fit": {
+   "en": {
+    "title": "Measure and alpha print",
+    "why": "Find out whether everything fits before designing the real box: first the parts alone, then with every cable.",
+    "done_when": "Every part and every cable fits in a printed box, and the number of cables entering it is final.",
+    "tasks": {
+     "t_measure": "Measure everything the makers don't publish: display mounting holes, board heights, microphone, splitter",
+     "t_cables": "Count every cable and connector that enters the box",
+     "t_alpha1": "Alpha print 1: all parts in place, no cables",
+     "t_alpha2": "Alpha print 2: the same with all the internal wiring",
+     "t_size": "Lock in: the box's inside size (the 12 V splitter alone is 104 × 82 × 32 mm)"
+    }
+   },
+   "de": {
+    "title": "Messen und Alpha-Druck",
+    "why": "Herausfinden, ob alles passt, bevor der richtige Kasten entsteht: erst die Teile allein, dann mit allen Kabeln.",
+    "done_when": "Jedes Teil und jedes Kabel passt in einen gedruckten Kasten, und die Zahl der Kabel, die hineinführen, steht fest.",
+    "tasks": {
+     "t_measure": "Alles messen, was die Hersteller nicht angeben: Befestigungslöcher des Displays, Bauhöhen, Mikrofon, Splitter",
+     "t_cables": "Jedes Kabel und jeden Stecker zählen, der in den Kasten führt",
+     "t_alpha1": "Alpha-Druck 1: alle Teile an ihrem Platz, ohne Kabel",
+     "t_alpha2": "Alpha-Druck 2: dasselbe mit der ganzen Verkabelung",
+     "t_size": "Festlegen: Innenmaß des Kastens (der 12-V-Splitter allein misst 104 × 82 × 32 mm)"
+    }
+   }
+  },
+  "m_soft": {
+   "en": {
+    "title": "Bench build and software",
+    "why": "Wire everything together on the desk and build the software until the experience at the door and on the phone is release quality. The first two steps can start today.",
+    "done_when": "The desk setup does everything at release quality, and the measured power stays within 802.3af.",
+    "tasks": {
+     "t_s0": "Phone side first: answer a test call from a notification (no door hardware needed)",
+     "t_s1": "Doorbell on the doorbell computer: all three line states, 20 of 20 presses on the phone in under 1 s",
+     "t_s2": "Screen pages change on a ring; WiFi signal measured in a mock box behind metal (waits for the screen)",
+     "t_s3": "Talk, one direction at a time (walkie-talkie)",
+     "t_s4": "Lock in: full duplex or walkie-talkie, after tuning the echo",
+     "t_audio": "Lock in: which extra audio features (voice messages, push-to-talk into the house)",
+     "t_s5": "One cable, power rail, heater and its power limit; measure the real PoE draw (waits for the splitter)",
+     "t_ux": "UX until release quality: screen pages, light, sounds, the flow on the phone"
+    }
+   },
+   "de": {
+    "title": "Testaufbau und Software",
+    "why": "Alles auf dem Tisch zusammenstecken und die Software bauen, bis die Bedienung an der Tür und am Handy veröffentlichungsreif ist. Die ersten beiden Schritte gehen schon heute.",
+    "done_when": "Der Testaufbau kann alles in Veröffentlichungsqualität, und der gemessene Verbrauch bleibt innerhalb von 802.3af.",
+    "tasks": {
+     "t_s0": "Zuerst das Handy: einen Testanruf aus einer Benachrichtigung annehmen (ohne Hardware an der Tür)",
+     "t_s1": "Klingel auf dem Klingelrechner: alle drei Leitungszustände, 20 von 20 Drücken in unter 1 s auf dem Handy",
+     "t_s2": "Bildschirmseiten wechseln beim Klingeln; WLAN-Signal in einem Probekasten hinter Metall gemessen (wartet auf den Bildschirm)",
+     "t_s3": "Sprechen, immer eine Richtung (Wechselsprechen)",
+     "t_s4": "Festlegen: Gegensprechen oder Wechselsprechen, nach dem Echo-Abgleich",
+     "t_audio": "Festlegen: welche Audio-Extras (Sprachnachrichten, Push-to-Talk ins Haus)",
+     "t_s5": "Ein Kabel, Stromschiene, Heizung mit Leistungsbegrenzung; echten PoE-Verbrauch messen (wartet auf den Splitter)",
+     "t_ux": "Bedienung bis zur Veröffentlichungsreife: Bildschirmseiten, Licht, Töne, Ablauf am Handy"
+    }
+   }
+  },
+  "m_water": {
+   "en": {
+    "title": "Watertightness proof of concept",
+    "why": "Prove that the printed box, a steel bracket and a metal plate can be sealed, whichever way the box is mounted. Exploratory: it runs alongside everything else.",
+    "done_when": "A test box with bracket and test plate stays dry inside in a repeatable water test, and the sealing recipe is written down.",
+    "tasks": {
+     "t_mount": "Lock in: flush in the wall (cut into the insulation) or on the wall (printed box inside a brass housing)",
+     "t_bracket": "Design and source the steel bracket the brass plate screws onto",
+     "t_testplate": "Test plate: flat, no bends, no engraving, but the real cut-outs",
+     "t_seals": "Seals: 2 mm gasket cord, button O-ring, mic membranes, cable gland, pressure vent",
+     "t_material": "Lock in: box material (ABS is here for test boxes; ABS and ASA warp in large parts on an open printer, PETG is the alternative)",
+     "t_drain": "The grille cavity drains outwards (the CAD slope is currently the wrong way round)",
+     "t_test": "Water test of a sealed test box: hose or shower, dry inside afterwards"
+    }
+   },
+   "de": {
+    "title": "Dichtheits-Machbarkeitstest",
+    "why": "Nachweisen, dass sich gedruckter Kasten, Stahlrahmen und Metallplatte abdichten lassen, egal wie der Kasten montiert wird. Explorativ: läuft neben allem anderen her.",
+    "done_when": "Ein Testkasten mit Rahmen und Testplatte bleibt in einem wiederholbaren Wassertest innen trocken, und das Dichtungsrezept ist aufgeschrieben.",
+    "tasks": {
+     "t_mount": "Festlegen: bündig in der Wand (Dämmung aufschneiden) oder auf der Wand (gedruckter Kasten in einem Messinggehäuse)",
+     "t_bracket": "Stahlrahmen entwerfen und beschaffen, an den die Messingplatte geschraubt wird",
+     "t_testplate": "Testplatte: flach, ohne Kantung und Gravur, aber mit den echten Ausschnitten",
+     "t_seals": "Dichtungen: 2-mm-Rundschnur, O-Ring am Taster, Mikrofon-Membranen, Kabeleinführung, Druckausgleich",
+     "t_material": "Festlegen: Material des Kastens (ABS ist für Testkästen da; ABS und ASA verziehen sich bei großen Teilen auf einem offenen Drucker, PETG ist die Alternative)",
+     "t_drain": "Die Gitterkammer entwässert nach außen (das Gefälle im CAD ist derzeit falsch herum)",
+     "t_test": "Wassertest eines abgedichteten Testkastens: Schlauch oder Dusche, danach innen trocken"
+    }
+   }
+  },
+  "m_beta": {
+   "en": {
+    "title": "Beta box on the desk",
+    "why": "The complete device in its real box, with the steel bracket and a dummy plate, running on the desk over Ethernet. Not watertight yet.",
+    "done_when": "The whole device runs in its box for two weeks without a surprise.",
+    "tasks": {
+     "t_bprint": "Print the beta box from what the alpha prints showed",
+     "t_bbracket": "Fit the steel bracket and a dummy plate (flat, same cut-outs)",
+     "t_bwire": "All inside wiring finished; the wiring to the outside is settled",
+     "t_bsoak": "Two weeks on the desk over Ethernet: scripted rings and calls, 20 PoE power cycles, no unexpected reboot of the doorbell computer"
+    }
+   },
+   "de": {
+    "title": "Beta-Kasten auf dem Tisch",
+    "why": "Das komplette Gerät in seinem echten Kasten, mit Stahlrahmen und Dummy-Platte, am Tisch per Ethernet in Betrieb. Noch nicht wasserdicht.",
+    "done_when": "Das ganze Gerät läuft zwei Wochen in seinem Kasten ohne Überraschung.",
+    "tasks": {
+     "t_bprint": "Beta-Kasten nach den Erkenntnissen der Alpha-Drucke drucken",
+     "t_bbracket": "Stahlrahmen und Dummy-Platte (flach, gleiche Ausschnitte) einbauen",
+     "t_bwire": "Verkabelung innen fertig; der Anschluss nach außen steht fest",
+     "t_bsoak": "Zwei Wochen am Tisch per Ethernet: automatische Klingel- und Gesprächstests, 20 PoE-Neustarts, kein unerwarteter Neustart des Klingelrechners"
+    }
+   }
+  },
+  "m_pre": {
+   "en": {
+    "title": "Pre-release box",
+    "why": "Bring the sealing lessons into the proven beta design and order the real brass front.",
+    "done_when": "The finished device passes the water test and the cold start.",
+    "tasks": {
+     "t_papply": "Apply the sealing recipe to the beta design",
+     "t_pbrass": "Order the real brass front from a metal shop (laser-cut, bent, engraved)",
+     "t_pprint": "Final print in the chosen material",
+     "t_pwater": "Water test of the complete device",
+     "t_pcold": "Freezer cold start: heater, screen and splitter come up in frost"
+    }
+   },
+   "de": {
+    "title": "Vorserien-Kasten",
+    "why": "Die Erkenntnisse aus dem Dichtheitstest in den erprobten Beta-Entwurf übernehmen und die echte Messingfront bestellen.",
+    "done_when": "Das fertige Gerät besteht Wassertest und Kaltstart.",
+    "tasks": {
+     "t_papply": "Das Dichtungsrezept auf den Beta-Entwurf übertragen",
+     "t_pbrass": "Die echte Messingfront beim Blechbearbeiter bestellen (gelasert, gekantet, graviert)",
+     "t_pprint": "Enddruck im gewählten Material",
+     "t_pwater": "Wassertest des kompletten Geräts",
+     "t_pcold": "Kaltstart im Gefrierschrank: Heizung, Bildschirm und Splitter starten bei Frost"
+    }
+   }
+  },
+  "m_door": {
+   "en": {
+    "title": "At the door",
+    "why": "Install the finished device at the front door and switch it on for good.",
+    "done_when": "A ring at the real door reaches the phone.",
+    "tasks": {
+     "t_elec": "Electrician: earth the surge protector, remove the old bell transformer",
+     "t_route": "Cable route through the wall",
+     "t_fix": "Mount the box and seal the joint to the facade",
+     "t_live": "Go live with the watchdogs on (stuck button, cut wire, offline)"
+    }
+   },
+   "de": {
+    "title": "An der Tür",
+    "why": "Das fertige Gerät an der Haustür einbauen und dauerhaft einschalten.",
+    "done_when": "Ein Klingeln an der echten Tür kommt auf dem Handy an.",
+    "tasks": {
+     "t_elec": "Elektriker: Überspannungsschutz erden, alten Klingeltrafo ausbauen",
+     "t_route": "Kabelweg durch die Wand",
+     "t_fix": "Kasten montieren und die Fuge zur Fassade abdichten",
+     "t_live": "In Betrieb nehmen, mit Wächtern (klemmender Taster, Kabelbruch, offline)"
+    }
+   }
+  }
+ }
 }

@@ -56,6 +56,7 @@ can never silence it. Details, power budget and the winter heater: [docs/archite
 |---|---|
 | [`docs/architecture.md`](docs/architecture.md) | how it works, power, winter, talk, mechanics |
 | [`docs/bom.md`](docs/bom.md) | what to buy, with the traps (fake "touch" listings, copper-clad cable) |
+| [`docs/roadmap.md`](docs/roadmap.md) | the milestones from parts on the desk to the door, and the decisions still to lock in |
 | [`docs/build-log.md`](docs/build-log.md) | what happened so far, including the dead ends |
 | [`docs/family-app.md`](docs/family-app.md) | the planned self-hosted app for the household |
 | [`hardware/`](hardware/) | front sheet, box and diffuser: generator scripts, STL and STEP, part drawings |

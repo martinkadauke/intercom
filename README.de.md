@@ -57,6 +57,7 @@ im Audiocode kann sie deshalb nie stumm schalten. Details, Strombudget und Winte
 |---|---|
 | [`docs/architecture.md`](docs/architecture.md) | Aufbau, Strom, Winter, Sprechen, Mechanik |
 | [`docs/bom.md`](docs/bom.md) | Einkaufsliste mit den Fallen (falsche „Touch“-Angebote, Kabel mit Aluminiumkern) |
+| [`docs/roadmap.md`](docs/roadmap.md) | die Meilensteine vom Tisch bis zur Tür und die offenen Entscheidungen (Englisch) |
 | [`docs/build-log.md`](docs/build-log.md) | was bisher passiert ist, auch die Sackgassen |
 | [`docs/family-app.md`](docs/family-app.md) | die geplante selbst gehostete App für den Haushalt |
 | [`hardware/`](hardware/) | Front, Kasten und Diffusor: Skripte, STL und STEP, Maßzeichnungen der Teile |

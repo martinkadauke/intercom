@@ -271,6 +271,86 @@ svg.focus .edge.l-poe.hl .wire{stroke-width:5.4}
 .front-screw path{stroke:var(--brass);stroke-width:1.6;stroke-linecap:round}
 @media (prefers-reduced-motion:reduce){.edge.flowing .flow{animation:none;stroke-dasharray:none;opacity:.35}.node,.edge,.panel,.zoom{transition:none!important}}
 
+
+/* roadmap */
+.rm-scroll{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper-2);-webkit-overflow-scrolling:touch}
+.rm-scroll svg{display:block;width:100%;min-width:980px;height:auto}
+.rm-card{cursor:pointer}
+.rm-card:focus{outline:none}
+.rm-bg{fill:var(--paper);stroke:var(--card-stroke);stroke-width:1.2;transition:stroke .15s}
+.rm-card.st-now .rm-bg{stroke:var(--brass-2);stroke-width:2.4}
+.rm-card.st-done .rm-bg{fill:var(--paper-2)}
+.rm-card.st-later{opacity:.84}
+.rm-card.explore .rm-bg{stroke-dasharray:7 5}
+.rm-card:hover .rm-bg,.rm-card:focus-visible .rm-bg{stroke:var(--ink);stroke-width:2.2}
+.rm-card.sel .rm-bg{stroke:var(--brass);stroke-width:3}
+.rm-k{font:500 10px var(--mono);letter-spacing:.06em;fill:var(--muted);text-transform:uppercase}
+.rm-t{font:600 16px var(--sans);fill:var(--ink)}
+.rm-n{font:600 11px var(--mono);fill:var(--muted)}
+.rm-barbg{fill:var(--rule-2)}
+.rm-bar{fill:var(--brass-2)}
+.st-done .rm-bar{fill:var(--ink-2)}
+.rm-dia{fill:var(--brass-2)}
+.rm-pill rect{fill:none;stroke:var(--ink-2);stroke-width:1.2}
+.rm-pill text{font:600 9.5px var(--mono);letter-spacing:.08em;fill:var(--ink)}
+.rm-pill.p-done rect{fill:var(--ink);stroke:var(--ink)} .rm-pill.p-done text{fill:var(--ground)}
+.rm-pill.p-now rect{fill:var(--brass-2);stroke:var(--brass-2)} .rm-pill.p-now text{fill:#fff}
+.rm-pill.p-later rect{stroke:var(--faint);stroke-dasharray:3 2} .rm-pill.p-later text{fill:var(--muted)}
+.rm-wire{fill:none;stroke:var(--muted);stroke-width:1.8;stroke-linejoin:round}
+.rm-link.soft .rm-wire{stroke-dasharray:5 5}
+.rm-soft-l{font:500 10px var(--mono);fill:var(--muted)}
+.rm-links,.rm-link{transition:opacity .2s}
+svg.rm-focus .rm-link:not(.hl){opacity:.18}
+svg.rm-focus .rm-card:not(.hl){opacity:.45}
+.rm-link.hl .rm-wire{stroke:var(--ink);stroke-width:2.6}
+.rm-legend{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;padding-block:10px 0;font-size:12.5px;color:var(--muted)}
+.rm-legend svg{width:26px;height:12px;flex:none}
+.trk{display:inline-block;width:4px;height:13px;border-radius:2px}
+.pill{display:inline-block;font:600 10px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:999px;border:1.2px solid var(--ink-2);color:var(--ink);white-space:nowrap}
+.pill.p-done{background:var(--ink);border-color:var(--ink);color:var(--ground)}
+.pill.p-now{background:var(--brass-2);border-color:var(--brass-2);color:#fff}
+.pill.p-later{border-style:dashed;border-color:var(--faint);color:var(--muted)}
+.lockins{margin-top:16px;padding:14px 16px;border:1px solid var(--brass-3);border-radius:10px;background:var(--brass-wash)}
+.lk-h{font:700 13px var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);display:flex;gap:8px;align-items:baseline}
+.lk-h small{font:500 11px var(--mono);letter-spacing:0;color:var(--muted)}
+.lk{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.lk button{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--brass-3);background:var(--paper);border-radius:6px;padding:6px 10px;cursor:pointer;font:500 13.5px var(--sans);color:var(--ink);text-align:left}
+.lk button:hover{border-color:var(--brass)}
+.lk .lk-m{font:600 11px var(--mono);color:var(--brass)}
+.lk .done{opacity:.6;text-decoration:line-through}
+.dia{width:10px;height:10px;flex:none;transform:rotate(45deg);background:var(--brass-2);border-radius:1px}
+.rm-list{margin-top:16px}
+details.ms{margin-top:8px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);scroll-margin-top:16px;transition:box-shadow .3s}
+details.ms.flash{box-shadow:0 0 0 3px var(--brass-2)}
+details.ms>summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;gap:6px 14px;align-items:center;padding:12px 16px}
+details.ms>summary::-webkit-details-marker{display:none}
+.ms-n{font:600 13px var(--mono);color:var(--brass);min-width:2.2em}
+.ms-t{font:600 16px/1.3 var(--sans)}
+.ms-t small{display:block;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.ms-p{display:inline-flex;align-items:center;gap:8px;font:500 12px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.ms-p i{display:block;width:64px;height:6px;border-radius:3px;background:var(--rule-2);position:relative;overflow:hidden}
+.ms-p i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:var(--brass-2)}
+.ms-b{padding:0 16px 16px 16px;border-top:1px solid var(--rule-2)}
+.ms-why{margin:12px 0 0;max-width:72ch;color:var(--ink-2)}
+.ms-needs{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin-top:10px;font-size:13px;color:var(--muted)}
+.ms-needs button{border:1px solid var(--rule);background:var(--paper-2);border-radius:5px;padding:3px 8px;font:500 12.5px var(--sans);color:var(--ink);cursor:pointer}
+.ms-needs button:hover{border-color:var(--ink)}
+.tasks{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tk{display:grid;grid-template-columns:18px minmax(0,1fr) auto;gap:4px 10px;align-items:start;font-size:14.5px;line-height:1.45}
+.tk .ti{width:16px;height:16px;margin-top:2px}
+.tk-s{font:500 11px var(--mono);color:var(--muted);white-space:nowrap;padding-top:3px}
+.tk-t button{border:0;background:none;padding:0 0 0 6px;font:500 12px var(--sans);color:var(--brass);cursor:pointer;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.tk.st-done .tk-t{color:var(--muted)}
+.tk.st-decide .tk-t{font-weight:600}
+.ti circle,.ti path,.ti rect{fill:none;stroke:var(--ink-2);stroke-width:1.5}
+.ti-done circle{fill:var(--ink);stroke:var(--ink)} .ti-done path{stroke:var(--ground);stroke-width:1.9}
+.ti-doing path{fill:var(--brass-2);stroke:none} .ti-doing circle{stroke:var(--brass-2)}
+.ti-waiting circle{stroke:var(--faint);stroke-dasharray:2.4 2}
+.ti-decide rect{fill:var(--brass-wash);stroke:var(--brass-2);stroke-width:1.7}
+.ms-exit{margin-top:14px;padding:10px 12px;border-left:3px solid var(--brass-2);background:var(--paper-2);font-size:14px}
+.ms-exit b{display:block;font:700 11px var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:2px}
+@media (max-width:640px){details.ms>summary{grid-template-columns:auto minmax(0,1fr)}details.ms>summary .pill,details.ms>summary .ms-p{grid-column:2;justify-self:start}.tk{grid-template-columns:18px minmax(0,1fr)}.tk-s{grid-column:2;padding-top:0}}
+
 /* lower sections */
 .sec{margin-top:44px;padding-top:26px;border-top:1px solid var(--rule)}
 .sec-h{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 20px}
@@ -337,6 +417,7 @@ footer .never{font:600 13px var(--cond);letter-spacing:.2em;text-transform:upper
       <div class="cta">
         <button class="btn" type="button" data-tour="ring" data-t="ctaRing"></button>
         <a class="btn ghost" href="#map" data-t="ctaMap"></a>
+        <a class="btn ghost" href="#roadmap" data-t="ctaRoadmap"></a>
       </div>
     </div>
     <div class="plate" aria-label="Rating plate">
@@ -369,6 +450,15 @@ footer .never{font:600 13px var(--cond);letter-spacing:.2em;text-transform:upper
       <aside class="panel" id="panel"><div class="ep" id="ep"></div></aside>
     </div>
     <div class="legend" id="legend"></div>
+  </section>
+
+  <section class="sec" id="roadmap">
+    <div class="sec-h"><h2 data-t="roadmapTitle"></h2></div>
+    <p class="sec-lede" data-t="roadmapLede"></p>
+    <div class="rm-scroll"><svg id="rmsvg" xmlns="http://www.w3.org/2000/svg" role="img"></svg></div>
+    <div class="rm-legend" id="rmLegend"></div>
+    <div class="lockins" id="lockins"></div>
+    <div class="rm-list" id="rmList"></div>
   </section>
 
   <section class="sec" id="walk">
@@ -440,7 +530,15 @@ en:{
     software:'Links over the network: ESPHome to Home Assistant, notifications, screen content and the planned voice paths.',
     mech:'How parts are mounted and sealed, and where air, water, light and sound get through.'},
   methods:{plug:'plug',screw:'screw terminal',wago:'lever clamp',crimp:'crimp',solder:'solder',header:'pin header',usb:'USB-C',gland:'cable gland',wireless:'radio',network:'over the network',mech:'mechanical'},
-  pending:null
+  pending:null,
+  ctaRoadmap:'Roadmap ↓', roadmapTitle:'Roadmap',
+  roadmapLede:'From parts on the desk to a doorbell at the door. Tap a milestone for its tasks.',
+  tracks:{plan:'Concept',hw:'Hardware & fit',sw:'Software & UX',wx:'Weatherproofing',box:'Box & release'},
+  msSt:{done:'Done',now:'Now',next:'Next',later:'Later'},
+  tkSt:{done:'done',doing:'under way',open:'to do',waiting:'waiting',decide:'to lock in'},
+  needs:'Needs', doneWhen:'Done when', lockins:'Must-lock-ins', onMap:'on the map', exploratory:'exploratory',
+  rmProvides:'bracket + dummy plate', lgNeeds:'needs', lgProvides:'provides the bracket and dummy plate',
+  lgExplore:'exploratory, runs in parallel', lgDecision:'decision that must be locked in', lockPrefix:'Lock in: '
 },
 de:{
   repo:'Quellcode auf GitHub', kicker:'Offene Türsprechstelle · ESP32 · ESPHome · Home Assistant',
@@ -492,7 +590,15 @@ de:{
     'Pinbelegung am Hauptrechner (nur der Analogpin für den Taster ist durch die Physik festgelegt).',
     'WLAN-Empfang des Bildschirms im Kasten: Test vor Ort.',
     'Typ des LED-Streifens (RGBW) und Touch-Chip des Bildschirms: Prüfung am Tisch.',
-    'CAD: Der Boden der Gitterkammer fällt in die falsche Richtung (Wasser stünde am Lautsprecher).']
+    'CAD: Der Boden der Gitterkammer fällt in die falsche Richtung (Wasser stünde am Lautsprecher).'],
+  ctaRoadmap:'Fahrplan ↓', roadmapTitle:'Fahrplan',
+  roadmapLede:'Von den Teilen auf dem Tisch bis zur Klingel an der Tür. Einen Meilenstein antippen, um seine Aufgaben zu sehen.',
+  tracks:{plan:'Konzept',hw:'Hardware & Passform',sw:'Software & Bedienung',wx:'Wetterschutz',box:'Gehäuse & Einbau'},
+  msSt:{done:'Erledigt',now:'Jetzt',next:'Als Nächstes',later:'Später'},
+  tkSt:{done:'erledigt',doing:'läuft',open:'offen',waiting:'wartet',decide:'festlegen'},
+  needs:'Braucht', doneWhen:'Fertig, wenn', lockins:'Muss festgelegt werden', onMap:'auf der Karte', exploratory:'explorativ',
+  rmProvides:'Rahmen + Dummy-Platte', lgNeeds:'braucht', lgProvides:'liefert Rahmen und Dummy-Platte',
+  lgExplore:'explorativ, läuft parallel', lgDecision:'Entscheidung, die fallen muss', lockPrefix:'Festlegen: '
 }};
 
 const LAYERS = SK.layers.map(l => l.id);
@@ -1336,13 +1442,127 @@ function showOnMap(id){ selectNode(id,{fit:true}); $('#map').scrollIntoView({beh
 $('#parts').addEventListener('click',ev=>{ const tr=ev.target.closest('tr[data-node]'); if(tr) showOnMap(tr.getAttribute('data-node')); });
 $('#solder').addEventListener('click',ev=>{ const b=ev.target.closest('[data-show]'); if(b) showOnMap(b.getAttribute('data-show')); });
 
+
+/* ---------- roadmap ---------- */
+const MS = SK.milestones || [];
+const TRACK_COLOR = {plan:'var(--ink-2)',hw:'var(--w-ethernet)',sw:'var(--w-poe)',wx:'var(--w-wifi)',box:'var(--brass-2)'};
+function msTx(id){ const x=(TX.milestones||{})[id]; return (x && (x[lang]||x.en)) || {title:id,why:'',done_when:'',tasks:{}}; }
+function msNo(id){ return 'M'+MS.findIndex(m=>m.id===id); }
+function msProg(m){ return [m.tasks.filter(k=>k.status==='done').length, m.tasks.length]; }
+function taskIcon(st){
+  if(st==='done') return '<svg viewBox="0 0 16 16" class="ti ti-done" aria-hidden="true"><circle cx="8" cy="8" r="7"/><path d="M4.6 8.3 7 10.6l4.4-5"/></svg>';
+  if(st==='doing') return '<svg viewBox="0 0 16 16" class="ti ti-doing" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z"/></svg>';
+  if(st==='waiting') return '<svg viewBox="0 0 16 16" class="ti ti-waiting" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/></svg>';
+  if(st==='decide') return '<svg viewBox="0 0 16 16" class="ti ti-decide" aria-hidden="true"><rect x="3.4" y="3.4" width="9.2" height="9.2" rx="1" transform="rotate(45 8 8)"/></svg>';
+  return '<svg viewBox="0 0 16 16" class="ti ti-open" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/></svg>';
+}
+function roundPath(P,R){
+  R=R||8; let d='M'+P[0][0]+' '+P[0][1], cur=P[0];
+  for(let i=1;i<P.length;i++){
+    const b=P[i], c=P[i+1];
+    if(c){
+      const l1=Math.hypot(b[0]-cur[0],b[1]-cur[1]), l2=Math.hypot(c[0]-b[0],c[1]-b[1]), r=Math.min(R,l1/2,l2/2);
+      const e=[b[0]-(b[0]-cur[0])/l1*r, b[1]-(b[1]-cur[1])/l1*r], o=[b[0]+(c[0]-b[0])/l2*r, b[1]+(c[1]-b[1])/l2*r];
+      d+=' L'+f(e[0])+' '+f(e[1])+' Q'+b[0]+' '+b[1]+' '+f(o[0])+' '+f(o[1]); cur=o;
+    } else { d+=' L'+b[0]+' '+b[1]; cur=b; }
+  }
+  return d;
+}
+function shortLock(text){
+  let s=text, pre=t('lockPrefix');
+  if(s.indexOf(pre)===0) s=s.slice(pre.length);
+  s=s.replace(/ *\([^)]*\)/g,'').replace(/, after .*$/,'').trim();
+  return s.charAt(0).toUpperCase()+s.slice(1);
+}
+function renderRoadmap(){
+  const rs=$('#rmsvg'); if(!rs || !MS.length || !LY.roadmap) return;
+  const R=LY.roadmap; rs.setAttribute('viewBox', R.viewBox.join(' '));
+  rs.setAttribute('aria-label', t('roadmapTitle'));
+  rs.innerHTML='';
+  el('defs',null,rs,'<marker id="rmArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" style="fill:var(--muted)"/></marker>');
+  const gL=el('g',{class:'rm-links'},rs);
+  R.links.forEach(l=>{
+    const g=el('g',{class:'rm-link'+(l.soft?' soft':''),'data-from':l.from,'data-to':l.to},gL);
+    el('path',{d:roundPath(l.pts),class:'rm-wire','marker-end':'url(#rmArrow)'},g);
+    if(l.soft){ const a=l.pts[0], b=l.pts[1]; txt(g,{x:f((a[0]+b[0])/2),y:a[1]-7,'text-anchor':'middle',class:'rm-soft-l'},t('rmProvides')); }
+  });
+  const gC=el('g',{class:'rm-cards'},rs);
+  MS.forEach((m,i)=>{
+    const c=R.cards[m.id]; if(!c) return;
+    const [x,y,w,h]=c, tx=msTx(m.id), pr=msProg(m), dec=m.tasks.filter(k=>k.status==='decide').length;
+    const g=el('g',{class:'rm-card st-'+m.status+(m.track==='wx'?' explore':''),'data-ms':m.id,tabindex:0,role:'button','aria-label':'M'+i+' '+tx.title+', '+t('msSt')[m.status]},gC);
+    el('rect',{x,y,width:w,height:h,rx:10,class:'rm-bg'},g);
+    el('rect',{x:x+.6,y:y+12,width:4,height:h-24,rx:2,style:'fill:'+TRACK_COLOR[m.track]},g);
+    const pl=t('msSt')[m.status].toUpperCase(); mctx.font='600 9.5px "JetBrains Mono", Consolas, monospace';
+    const pw=mctx.measureText(pl).width+14;
+    // header "M1 · TRACK": drop the track name when it would run under the status pill
+    mctx.font='500 10px "JetBrains Mono", Consolas, monospace';
+    const kw=s=>mctx.measureText(s.toUpperCase()).width+s.length*0.6, kroom=w-16-pw-22;
+    let kline='M'+i+' · '+t('tracks')[m.track]; if(m.track==='wx') kline+=' · '+t('exploratory');
+    if(kw(kline)>kroom) kline='M'+i+(m.track==='wx' && kw('M'+i+' · '+t('exploratory'))<=kroom ? ' · '+t('exploratory') : '');
+    txt(g,{x:x+16,y:y+23,class:'rm-k'},kline);
+    const pg=el('g',{class:'rm-pill p-'+m.status},g);
+    el('rect',{x:f(x+w-12-pw),y:y+10,width:f(pw),height:18,rx:9},pg);
+    txt(pg,{x:f(x+w-12-pw/2),y:y+22.5,'text-anchor':'middle'},pl);
+    const lines=wrap(tx.title,'600 16px Barlow, "Segoe UI", system-ui, sans-serif',w-34,2);
+    lines.forEach((ln,k)=>txt(g,{x:x+16,y:y+48+k*19,class:'rm-t'},ln));
+    const bw=w-16-16-(dec?78:48), by=y+h-21;
+    el('rect',{x:x+16,y:by,width:bw,height:6,rx:3,class:'rm-barbg'},g);
+    if(pr[0]) el('rect',{x:x+16,y:by,width:f(bw*pr[0]/pr[1]),height:6,rx:3,class:'rm-bar'},g);
+    txt(g,{x:x+w-16,y:by+6.5,'text-anchor':'end',class:'rm-n'},pr[0]+'/'+pr[1]);
+    if(dec){ const dx=x+w-62, dy=by+3; el('rect',{x:dx-4,y:dy-4,width:8,height:8,rx:1,class:'rm-dia',transform:'rotate(45 '+dx+' '+dy+')'},g); txt(g,{x:dx+8,y:by+6.5,class:'rm-n'},String(dec)); }
+  });
+  const lgPill=(s)=>'<span class="pill p-'+s+'">'+esc(t('msSt')[s])+'</span>';
+  const line=(style)=>'<svg viewBox="0 0 26 12" aria-hidden="true"><path d="M1 6h20" fill="none" stroke-width="1.8" style="stroke:var(--muted);'+style+'"/><path d="M19 2.5 25 6l-6 3.5z" style="fill:var(--muted)"/></svg>';
+  $('#rmLegend').innerHTML=['now','next','later','done'].map(lgPill).join(' ')+
+    '<span class="lg">'+line('')+esc(t('lgNeeds'))+'</span>'+
+    '<span class="lg">'+line('stroke-dasharray:4 4')+esc(t('lgProvides'))+'</span>'+
+    '<span class="lg"><svg viewBox="0 0 26 12" aria-hidden="true"><rect x="1" y="1" width="24" height="10" rx="3" fill="none" stroke-width="1.4" style="stroke:var(--ink-2);stroke-dasharray:4 3"/></svg>'+esc(t('lgExplore'))+'</span>'+
+    '<span class="lg"><span class="dia"></span>'+esc(t('lgDecision'))+'</span>'+
+    Object.keys(TRACK_COLOR).map(k=>'<span class="lg"><i class="trk" style="background:'+TRACK_COLOR[k]+'"></i>'+esc(t('tracks')[k])+'</span>').join('');
+  const locks=[]; MS.forEach(m=>m.tasks.forEach(k=>{ if(k.status==='decide') locks.push([m,k]); }));
+  $('#lockins').innerHTML='<div class="lk-h">'+esc(t('lockins'))+'<small>'+locks.length+'</small></div><ul class="lk">'+
+    locks.map(([m,k])=>'<li><button type="button" data-ms-open="'+m.id+'"><span class="dia"></span><span>'+esc(shortLock(msTx(m.id).tasks[k.id]||k.id))+'</span><span class="lk-m">'+msNo(m.id)+'</span></button></li>').join('')+'</ul>';
+  $('#rmList').innerHTML=MS.map((m,i)=>{
+    const tx=msTx(m.id), pr=msProg(m);
+    let h='<details class="ms" id="ms-'+m.id+'"><summary><span class="ms-n">M'+i+'</span><span class="ms-t">'+esc(tx.title)+'<small>'+esc(t('tracks')[m.track])+(m.track==='wx'?' · '+esc(t('exploratory')):'')+'</small></span>'+
+      '<span class="pill p-'+m.status+'">'+esc(t('msSt')[m.status])+'</span><span class="ms-p"><i style="--p:'+Math.round(100*pr[0]/pr[1])+'%"></i>'+pr[0]+'/'+pr[1]+'</span></summary><div class="ms-b">';
+    h+='<p class="ms-why">'+esc(tx.why)+'</p>';
+    const needs=m.needs.concat(m.soft||[]);
+    if(needs.length) h+='<div class="ms-needs"><span>'+esc(t('needs'))+':</span>'+needs.map(n=>'<button type="button" data-ms-open="'+n+'">'+msNo(n)+' · '+esc(msTx(n).title)+'</button>').join('')+'</div>';
+    h+='<ol class="tasks">'+m.tasks.map(k=>'<li class="tk st-'+k.status+'">'+taskIcon(k.status)+'<span class="tk-t">'+esc(tx.tasks[k.id]||k.id)+(k.node&&N[k.node]?'<button type="button" data-show="'+k.node+'">'+esc(t('onMap'))+' ↗</button>':'')+'</span><span class="tk-s">'+esc(t('tkSt')[k.status])+'</span></li>').join('')+'</ol>';
+    h+='<div class="ms-exit"><b>'+esc(t('doneWhen'))+'</b>'+esc(tx.done_when)+'</div></div></details>';
+    return h;
+  }).join('');
+}
+function openMs(id){
+  const d=document.getElementById('ms-'+id); if(!d) return;
+  d.open=true;
+  document.querySelectorAll('#rmsvg .rm-card').forEach(g=>g.classList.toggle('sel', g.getAttribute('data-ms')===id));
+  d.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+  d.classList.add('flash'); setTimeout(()=>d.classList.remove('flash'),1200);
+}
+function rmFocus(id){
+  const rs=$('#rmsvg'); rs.classList.toggle('rm-focus', !!id);
+  rs.querySelectorAll('.rm-link').forEach(l=>l.classList.toggle('hl', !!id && (l.getAttribute('data-from')===id || l.getAttribute('data-to')===id)));
+  rs.querySelectorAll('.rm-card').forEach(c=>{ const m=c.getAttribute('data-ms'); c.classList.toggle('hl', !!id && (m===id || [...rs.querySelectorAll('.rm-link.hl')].some(l=>l.getAttribute('data-from')===m || l.getAttribute('data-to')===m))); });
+}
+$('#rmsvg').addEventListener('click',ev=>{ const c=ev.target.closest('[data-ms]'); if(c) openMs(c.getAttribute('data-ms')); });
+$('#rmsvg').addEventListener('keydown',ev=>{ if(ev.key!=='Enter' && ev.key!==' ') return; const c=ev.target.closest && ev.target.closest('[data-ms]'); if(c){ ev.preventDefault(); openMs(c.getAttribute('data-ms')); } });
+$('#rmsvg').addEventListener('pointerover',ev=>{ const c=ev.target.closest('[data-ms]'); rmFocus(c?c.getAttribute('data-ms'):null); });
+$('#rmsvg').addEventListener('pointerleave',()=>rmFocus(null));
+$('#roadmap').addEventListener('click',ev=>{
+  const o=ev.target.closest('[data-ms-open]'); if(o){ ev.preventDefault(); openMs(o.getAttribute('data-ms-open')); return; }
+  const sh=ev.target.closest('[data-show]'); if(sh){ ev.preventDefault(); showOnMap(sh.getAttribute('data-show')); }
+});
+
 /* ---------- language ---------- */
 function applyLang(){
   document.documentElement.lang=lang;
   document.querySelectorAll('[data-t]').forEach(n=>{ const v=t(n.getAttribute('data-t')); if(typeof v==='string') n.textContent=v; });
   document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===lang)));
   svg.setAttribute('aria-label', lang==='de'?'Schaltplan der Klingelbox':'Wiring map of the Klingelbox');
-  renderTools(); renderLegend(); renderLower(); renderSVG(); renderPanel();
+  renderTools(); renderLegend(); renderLower(); renderRoadmap(); renderSVG(); renderPanel();
   if(state.tour) showStep();
 }
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ lang=b.getAttribute('data-lang'); store.set('kb-lang',lang); applyLang(); });
@@ -1350,6 +1570,6 @@ document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{ lang=b.getAt
 vb=norm(homeView());
 applyLang();
 requestAnimationFrame(()=>{ if(canvas.clientWidth){ lastW=canvas.clientWidth; vb=norm(homeView()); applyView(); } });
-if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ renderSVG(); });
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(()=>{ renderSVG(); renderRoadmap(); });
 })();
 </script>

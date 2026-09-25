@@ -92,5 +92,31 @@
     "e_gasket_brass":     {"from": "b", "to": "t"},
     "e_fuse_heater":      {"from": "b", "to": "t"},
     "e_heater_mosfet":    {"from": "b", "to": "t"}
+  },
+  "roadmap": {
+    "_about": "Milestone diagram, viewBox 1440 x 408. Cards [x, y, w, h]; links are explicit polylines ending at the target's edge.",
+    "viewBox": [0, 0, 1440, 408],
+    "cards": {
+      "m_concept":    [20, 150, 200, 108],
+      "m_parts":      [260, 20, 200, 108],
+      "m_fit":        [500, 20, 200, 108],
+      "m_soft":       [500, 150, 200, 108],
+      "m_water":      [260, 280, 440, 108],
+      "m_beta":       [740, 85, 200, 108],
+      "m_pre":        [980, 182, 200, 108],
+      "m_door":       [1220, 182, 200, 108]
+    },
+    "links": [
+      {"from": "m_concept", "to": "m_parts", "pts": [[220, 190], [240, 190], [240, 74], [260, 74]]},
+      {"from": "m_concept", "to": "m_water", "pts": [[220, 218], [240, 218], [240, 334], [260, 334]]},
+      {"from": "m_parts", "to": "m_fit", "pts": [[460, 60], [500, 60]]},
+      {"from": "m_parts", "to": "m_soft", "pts": [[460, 96], [480, 96], [480, 204], [500, 204]]},
+      {"from": "m_fit", "to": "m_beta", "pts": [[700, 74], [720, 74], [720, 125], [740, 125]]},
+      {"from": "m_soft", "to": "m_beta", "pts": [[700, 204], [720, 204], [720, 155], [740, 155]]},
+      {"from": "m_water", "to": "m_beta", "soft": true, "pts": [[700, 300], [840, 300], [840, 193]]},
+      {"from": "m_water", "to": "m_pre", "pts": [[700, 356], [950, 356], [950, 256], [980, 256]]},
+      {"from": "m_beta", "to": "m_pre", "pts": [[940, 139], [962, 139], [962, 216], [980, 216]]},
+      {"from": "m_pre", "to": "m_door", "pts": [[1180, 236], [1220, 236]]}
+    ]
   }
 }

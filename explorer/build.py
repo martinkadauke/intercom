@@ -80,7 +80,74 @@ def check(sk, ly, tx):
             for lang in ("en", "de"):
                 if len(tt[lang].get("steps", [])) != len(t["steps"]):
                     errors.append(f"texts.json tour {t['id']} {lang}: step count differs")
+    errors += check_roadmap(sk, ly, tx, node_ids)
     return errors
+
+
+TASK_STATES = {"done", "doing", "open", "waiting", "decide"}
+
+
+def check_roadmap(sk, ly, tx, node_ids):
+    errors = []
+    ms = sk.get("milestones", [])
+    ids = [m["id"] for m in ms]
+    if len(ids) != len(set(ids)):
+        errors.append("milestones: duplicate id")
+    cards = ly.get("roadmap", {}).get("cards", {})
+    for m in ms:
+        for ref in m.get("needs", []) + m.get("soft", []):
+            if ref not in ids:
+                errors.append(f"milestone {m['id']}: needs unknown milestone {ref}")
+        if m["id"] not in cards:
+            errors.append(f"milestone {m['id']}: no card in layout.json roadmap")
+        mt = tx.get("milestones", {}).get(m["id"])
+        for k in m["tasks"]:
+            if k["status"] not in TASK_STATES:
+                errors.append(f"milestone {m['id']} task {k['id']}: unknown status {k['status']}")
+            if k.get("node") and k["node"] not in node_ids:
+                errors.append(f"milestone {m['id']} task {k['id']}: unknown node {k['node']}")
+            for lang in ("en", "de"):
+                if mt and k["id"] not in mt.get(lang, {}).get("tasks", {}):
+                    errors.append(f"texts.json milestone {m['id']} {lang}: no text for task {k['id']}")
+    for link in ly.get("roadmap", {}).get("links", []):
+        for end in ("from", "to"):
+            if link[end] not in ids:
+                errors.append(f"layout.json roadmap link: unknown milestone {link[end]}")
+    return errors
+
+
+def roadmap_markdown(sk, tx):
+    """The roadmap as plain Markdown (English), for readers on GitHub."""
+    ms = sk.get("milestones", [])
+    if not ms:
+        return None
+    no = {m["id"]: f"M{i}" for i, m in enumerate(ms)}
+    title = {m["id"]: tx["milestones"][m["id"]]["en"]["title"] for m in ms}
+    status = {"done": "done", "now": "now", "next": "next", "later": "later"}
+    mark = {"done": "[x]", "doing": "[~]", "open": "[ ]", "waiting": "[ ] (waiting)", "decide": "[ ] ◆"}
+    out = ["# Roadmap", "",
+           f"State: {sk.get('state', '')}. Generated from `explorer/skeleton.json` and `explorer/texts.json`;",
+           "the interactive version is the roadmap section of the [explorer](../explorer/).", "",
+           "`[x]` done · `[~]` under way · `[ ]` to do · `◆` a decision that must be locked in", ""]
+    locks = [(m, k) for m in ms for k in m["tasks"] if k["status"] == "decide"]
+    if locks:
+        out += ["## Must-lock-ins", ""]
+        for m, k in locks:
+            out.append(f"- ◆ {tx['milestones'][m['id']]['en']['tasks'][k['id']]} ({no[m['id']]})")
+        out.append("")
+    for m in ms:
+        t = tx["milestones"][m["id"]]["en"]
+        done = sum(1 for k in m["tasks"] if k["status"] == "done")
+        out += [f"## {no[m['id']]} · {t['title']}", "",
+                f"**{status[m['status']].capitalize()}** · {done} of {len(m['tasks'])} tasks done", "", t["why"], ""]
+        needs = [f"{no[r]} {title[r]}" for r in m.get("needs", [])]
+        soft = [f"{no[r]} {title[r]} (bracket and dummy plate)" for r in m.get("soft", [])]
+        if needs or soft:
+            out += ["Needs: " + ", ".join(needs + soft), ""]
+        for k in m["tasks"]:
+            out.append(f"- {mark[k['status']]} {t['tasks'][k['id']]}")
+        out += ["", f"*Done when:* {t['done_when']}", ""]
+    return "\n".join(out)
 
 
 def main():
@@ -106,6 +173,10 @@ def main():
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(html.replace("__KB_DATA__", blob), encoding="utf-8")
     print(f"wrote {OUT.relative_to(HERE)} ({OUT.stat().st_size // 1024} KB)")
+    md = roadmap_markdown(sk, tx)
+    if md:
+        (OUT.parent / "roadmap.md").write_text(md, encoding="utf-8")
+        print("wrote dist/roadmap.md")
     for kind, ids in missing.items():
         if ids:
             print(f"  no text yet for {len(ids)} {kind}: {', '.join(ids)}")
