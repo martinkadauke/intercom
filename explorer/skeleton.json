@@ -253,7 +253,7 @@
     {
       "id": "amp",
       "zone": "box",
-      "status": "in_mail",
+      "status": "in_hand",
       "name": "Amplifier",
       "hint": "Adafruit MAX98357A: turns the digital I2S audio into speaker power (about 1.8 W into 8 ohm max). Must be set to its LOWEST gain because the speaker takes only 0.5 W rated / 1 W max: 3 dB = a 100 kOhm resistor from GAIN to Vin. Connecting GAIN to ground gives 12 dB, which is LOUDER."
     },
