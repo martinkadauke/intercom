@@ -1,5 +1,5 @@
 {
-  "state": "2026-09-25",
+  "state": "2026-09-26",
   "_about": "Structure of the Klingelbox explorer, state 2026-09-24. Architecture (decided 2026-09-24): ONE PoE cable into the box, no switch in the box. Three computers: the WT32-ETH01 is the wired doorbell computer (button, light, heater, climate sensor) on the splitter's data port; the Waveshare ESP32-S3-ETH is the talk computer (microphone, amplifier) on WiFi; the LilyGO T5 4.7 S3 Touch drives the screen on WiFi. Splitter output voltage (12 V shown) is still pending. Hints carry the facts writers may use; writers add no new facts.",
   "zones": [
     {
@@ -295,7 +295,7 @@
     {
       "id": "fuse",
       "zone": "box",
-      "status": "in_mail",
+      "status": "in_hand",
       "name": "Thermal fuse 73 °C",
       "hint": "From the ordered assortment (73-240 C, 10 A). In series with the heater: cuts the heater permanently if anything overheats, independent of the firmware. Soldering heat can blow it."
     },

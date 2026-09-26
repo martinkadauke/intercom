@@ -1,6 +1,6 @@
 # Roadmap
 
-State: 2026-09-25. Generated from `explorer/skeleton.json` and `explorer/texts.json`;
+State: 2026-09-26. Generated from `explorer/skeleton.json` and `explorer/texts.json`;
 the interactive version is the roadmap section of the [explorer](../explorer/).
 
 `[x]` done · `[~]` under way · `[ ]` to do · `◆` a decision that must be locked in
@@ -37,8 +37,8 @@ Needs: M0 Concept and architecture
 
 - [ ] ◆ Lock in: splitter 12 V or 5 V (it decides the heater and its switch)
 - [ ] Place the order: cable, cable gland, heater, seals, small parts
-- [x] In hand: doorbell and talk computers, microphones, amplifier, speaker, 12→5 V converter, level shifter, climate sensor, heater switch, USB-serial adapter
-- [~] In the mail: the screen computer and the thermal fuses
+- [x] In hand: doorbell and talk computers, microphones, amplifier, speaker, 12→5 V converter, level shifter, climate sensor, heater switch, USB-serial adapter, thermal fuses
+- [~] In the mail: the screen computer
 - [ ] Bench checks on arrival: touch chip (I²C scan), LED strip really RGBW, heater switch triggers at 3.3 V
 
 *Done when:* Every part of the final build is here and identified.

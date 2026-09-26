@@ -404,14 +404,14 @@
    "en": {
     "label": "Thermal fuse 73 °C",
     "what": "A one-shot safety link in series with the heater (in the same wire, so all heater current passes through it). If it gets hotter than 73 °C it cuts the heater off for good, whatever the firmware does.",
-    "specs": "The 73 °C part from the ordered assortment (73 to 240 °C, 10 A). Where it is mounted is not decided yet.",
+    "specs": "73 °C, 250 V, 10 A; two in hand, one is a spare. Where it is mounted is not decided yet.",
     "why": "It works without any software. The firmware switches the heater off around 40 °C; the fuse is the last backstop if that fails.",
     "solder": "Crimp (squeeze on a metal sleeve) preferred. If soldered: keep the legs long and clamp pliers between joint and fuse body to draw off the heat, since soldering heat can blow it."
    },
    "de": {
     "label": "73-°C-Sicherung",
     "what": "Eine Einmal-Sicherung in Reihe mit der Heizung (in derselben Leitung, der ganze Heizstrom fließt hindurch). Wird sie heißer als 73 °C, trennt sie die Heizung dauerhaft, egal, was die Firmware tut.",
-    "specs": "Das 73-°C-Teil aus dem bestellten Sortiment (73 bis 240 °C, 10 A). Wo die Sicherung sitzt, ist noch nicht entschieden.",
+    "specs": "73 °C, 250 V, 10 A; zwei Stück da, eine ist Reserve. Wo die Sicherung sitzt, ist noch nicht entschieden.",
     "why": "Sie wirkt ohne jede Software. Die Firmware schaltet die Heizung schon bei etwa 40 °C ab; die Sicherung greift erst, wenn das versagt.",
     "solder": "Am besten crimpen (Metallhülse aufpressen). Beim Löten: Beinchen lang lassen, Zange als Wärmeableiter zwischen Lötstelle und Sicherungskörper klemmen. Lötwärme kann sie auslösen."
    }
@@ -1858,8 +1858,8 @@
     "tasks": {
      "t_split": "Lock in: splitter 12 V or 5 V (it decides the heater and its switch)",
      "t_order": "Place the order: cable, cable gland, heater, seals, small parts",
-     "t_inhand": "In hand: doorbell and talk computers, microphones, amplifier, speaker, 12→5 V converter, level shifter, climate sensor, heater switch, USB-serial adapter",
-     "t_mail": "In the mail: the screen computer and the thermal fuses",
+     "t_inhand": "In hand: doorbell and talk computers, microphones, amplifier, speaker, 12→5 V converter, level shifter, climate sensor, heater switch, USB-serial adapter, thermal fuses",
+     "t_mail": "In the mail: the screen computer",
      "t_bench": "Bench checks on arrival: touch chip (I²C scan), LED strip really RGBW, heater switch triggers at 3.3 V"
     }
    },
@@ -1870,8 +1870,8 @@
     "tasks": {
      "t_split": "Festlegen: Splitter 12 V oder 5 V (davon hängen Heizung und Schalter ab)",
      "t_order": "Bestellen: Kabel, Kabeleinführung, Heizung, Dichtungen, Kleinteile",
-     "t_inhand": "Da: Klingel- und Sprechrechner, Mikrofone, Verstärker, Lautsprecher, 12→5-V-Wandler, Pegelwandler, Klimasensor, Heizungsschalter, USB-Seriell-Adapter",
-     "t_mail": "Unterwegs: Bildschirmrechner und Thermosicherungen",
+     "t_inhand": "Da: Klingel- und Sprechrechner, Mikrofone, Verstärker, Lautsprecher, 12→5-V-Wandler, Pegelwandler, Klimasensor, Heizungsschalter, USB-Seriell-Adapter, Thermosicherungen",
+     "t_mail": "Unterwegs: der Bildschirmrechner",
      "t_bench": "Prüfen beim Auspacken: Touch-Chip (I²C-Scan), LED-Streifen wirklich RGBW, Heizungsschalter schaltet mit 3,3 V"
     }
    }
